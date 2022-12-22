@@ -1,10 +1,14 @@
 # MLapp
- 
 
-Aplicación para buscar vehículos publicados en Mercadolibre, filtrar datos obtenidos según interés (año, kilometraje, combustible, transmisión, etc) y poder analizar el precio de mercado de los vehículos de interés.
+AplicaciÃ³n para buscar vehÃ­culos publicados en Mercadolibre, filtrar datos obtenidos segÃºn interÃ©s (aÃ±o, kilometraje, combustible, transmisiÃ³n, etc) y poder analizar el precio de mercado de los vehÃ­culos de interÃ©s.
 
-Publicaciones en USD: En archivo "datahandles.js" modificar valor de variable "cotizacionUSD = X" según cotización a la hora de realizar la consulta.
 
-Cantidad de resultados: API limitada a 50 resultados por request. En archivo "ML-API-Utils.js" se realiza el HTTP request a la API, y esta programada para traer 100 resultados (realiza 2 requests). En caso de precisar más resultados, agregar más requests.
 
-Offset resultados: Con los 2 requests se traen los primeros 100 resultados de la busqueda, los cuales están ordenados según "Más relevantes". Si se tiene interés de ir a resultados menos relevantes, se puede modificar el offset de http request en "ML-API-Utils.js", aumentando su valor.
+
+
+
+Publicaciones en USD: En archivo "datahandler.js" modificar valor de variable "cotizacionUSD = X" segÃºn cotizaciÃ³n a la hora de realizar la consulta.
+
+Cantidad de resultados: API limitada a 50 resultados por request. En archivo "ML-API-Utils.js" se realiza el HTTP request a la API, y esta programada para traer 100 resultados (realiza 2 requests). En caso de precisar mÃ¡s resultados, agregar mÃ¡s requests.
+
+Offset resultados: Con los 2 requests se traen los primeros 100 resultados de la busqueda, los cuales estÃ¡n ordenados segÃºn "MÃ¡s relevantes". Si se tiene interÃ©s de ir a resultados menos relevantes, se puede modificar el offset de http request en "ML-API-Utils.js", aumentando su valor.
