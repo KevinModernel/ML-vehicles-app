@@ -3,7 +3,6 @@ if ( document.getElementById("mytable") ) { // Checkea si se creo la tabla (es d
 	tr = table.getElementsByTagName("tr");
 };
 
-
 // Title filter
 // API brings others results rather than just the ones queried. 
 // Manual filter in table to solve that. Also useful to filter car version.
@@ -11,7 +10,6 @@ if ( document.getElementById("mytable") ) { // Checkea si se creo la tabla (es d
 function myFunction() {
 	let input = document.getElementById("myInput");
 	let filter = input.value.toUpperCase();
-	console.log(filter);
 	for (i = 0; i < tr.length; i++) {
 		td = tr[i].getElementsByClassName("title")[0];
 		if (td) {
@@ -24,7 +22,6 @@ function myFunction() {
 		}
 	}
 };
-
 
 // Kilometers filter
 const $firstKmIntervalButton = document.querySelector("#firstkm")
@@ -68,7 +65,6 @@ function filterTableByKm(bottom, top) {
       			txtValue = td.textContent || td.innerText;
       			txtValue = txtValue.replace(" km", "");
       			txtValue = parseFloat(txtValue);
-      			console.log("txtValue: " + txtValue);
      			if ( (bottom <= txtValue) && (txtValue <= top) )  {
         			tr[i].style.display = "";
       			} else {
@@ -120,7 +116,6 @@ function filterTableByYear(bottom, top) {
       			txtValue = td.textContent || td.innerText;
       			//txtValue = txtValue.replace(" km", "");
       			txtValue = parseFloat(txtValue);
-      			console.log("txtValue: " + txtValue);
      			if ( (bottom <= txtValue) && (txtValue <= top) )  {
         			tr[i].style.display = "";
       			} else {
@@ -161,7 +156,6 @@ function filterTableByTransmission(filter) {
     		td = tr[i].getElementsByClassName("transmission")[0];
     		if (td) {
       			txtValue = td.textContent || td.innerText;
-      			console.log("txtValue: " + txtValue);
      			if ( txtValue == filter )  {
         			tr[i].style.display = "";
       			} else {
@@ -209,7 +203,6 @@ function filterTableByFuel(filter) {
     		td = tr[i].getElementsByClassName("fuel")[0];
     		if (td) {
       			txtValue = td.textContent || td.innerText;
-      			console.log("txtValue: " + txtValue);
      			if ( txtValue == filter )  {
         			tr[i].style.display = "";
       			} else {

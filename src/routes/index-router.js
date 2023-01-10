@@ -1,5 +1,5 @@
-const express = require("express")
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 const { displayForm, getData } = require('../controllers/index-controllers.js');
 
 // Routes /
