@@ -12,20 +12,19 @@ class Car {
 	}
 }
 
-const dataInResponse = (response) => { // Busca index object km dentro de .attributes
+const dataInResponse = (response, cotizacionUSD) => { // Busca index object km dentro de .attributes
 	let storeData = [];
 	for(let j=0; j < response.data.results.length; j++) {
 		storeData.push(new Car(
 			j, 
 			getTitle(response, j),
 			getKilometers(response, j), 
-			getPrice(response, j),
+			getPrice(response, j, cotizacionUSD),
 			getYear(response, j),
 			getEngine(response, j),
 			getTransmission(response, j),
 			getFuel(response, j),
 			getLink(response, j)
-
 			) 
 		)
 	};
@@ -36,7 +35,9 @@ const dataInResponse = (response) => { // Busca index object km dentro de .attri
 const getTitle = (response, j) => {
 	return response.data.results[j].title;
 };
-
+// attributes no siempre vienen en el mismo orden, por lo que no se sabe de antemano en que posición (index)
+// va a estar el atributo deseado. Entonces, utilizo el siguiente algoritmo de busqueda para los
+// distintos atributos.
 const getKilometers = (response, j) => {
 	let k = 0;
 	for(let i=0; i < response.data.results[j].attributes.length; i++) { 
@@ -48,9 +49,8 @@ const getKilometers = (response, j) => {
 	return response.data.results[j].attributes[k].value_name;
 };
 
-const getPrice = (response, j) => {
+const getPrice = (response, j, cotizacionUSD) => {
 	const currency = response.data.results[j].currency_id;
-	cotizacionUSD = 322; // Ajustar valor segun cotizacino deseada.
 	if (currency == 'USD') {
 		return response.data.results[j].price*cotizacionUSD;
 	} else {
@@ -134,5 +134,7 @@ function compareValues(key, order = 'desc') {
     );
   };
 }
+
+
 
 module.exports = { dataInResponse }
