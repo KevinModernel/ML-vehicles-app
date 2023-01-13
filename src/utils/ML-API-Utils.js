@@ -22,6 +22,30 @@ const getRequestML = async (marca, modelo) => {
 				response.data.results.push(secondResponse.data.results[i]);	
 			};
 		};
+		if (response.data.paging.total > 100) { // Si hay, agrego 50 resultados más.
+			const secondResponse = await axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${marca}%20${modelo}&limit=50&offset=100`,
+				{ headers: {
+					'Authorization': authToken
+					}
+				}
+			)
+			for (let i=0; i < 50; i++) {
+				response.data.results.push(secondResponse.data.results[i]);	
+			};
+		};
+		if (response.data.paging.total > 150) { // Si hay, agrego 50 resultados más.
+			const secondResponse = await axios.get(`https://api.mercadolibre.com/sites/MLA/search?q=${marca}%20${modelo}&limit=50&offset=150`,
+				{ headers: {
+					'Authorization': authToken
+					}
+				}
+			)
+			for (let i=0; i < 50; i++) {
+				response.data.results.push(secondResponse.data.results[i]);	
+			};
+		};
+
+
 		return response;
 	} catch (e) {
 		console.log(e)

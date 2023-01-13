@@ -65,7 +65,7 @@ function filterTableByKm(bottom, top) {
       			txtValue = td.textContent || td.innerText;
       			txtValue = txtValue.replace(" km", "");
       			txtValue = parseFloat(txtValue);
-     			if ( (bottom <= txtValue) && (txtValue <= top) )  {
+     			if ( (bottom <= txtValue) && (txtValue <= top) && (tr[i].style.display !== "none") )  {
         			tr[i].style.display = "";
       			} else {
         			tr[i].style.display = "none";
@@ -116,7 +116,7 @@ function filterTableByYear(bottom, top) {
       			txtValue = td.textContent || td.innerText;
       			//txtValue = txtValue.replace(" km", "");
       			txtValue = parseFloat(txtValue);
-     			if ( (bottom <= txtValue) && (txtValue <= top) )  {
+     			if ( (bottom <= txtValue) && (txtValue <= top) && (tr[i].style.display !== "none")  )  {
         			tr[i].style.display = "";
       			} else {
         			tr[i].style.display = "none";
@@ -156,7 +156,7 @@ function filterTableByTransmission(filter) {
     		td = tr[i].getElementsByClassName("transmission")[0];
     		if (td) {
       			txtValue = td.textContent || td.innerText;
-     			if ( txtValue == filter )  {
+     			if ( txtValue == filter && (tr[i].style.display !== "none") )  {
         			tr[i].style.display = "";
       			} else {
         			tr[i].style.display = "none";
@@ -203,7 +203,7 @@ function filterTableByFuel(filter) {
     		td = tr[i].getElementsByClassName("fuel")[0];
     		if (td) {
       			txtValue = td.textContent || td.innerText;
-     			if ( txtValue == filter )  {
+     			if ( txtValue == filter && (tr[i].style.display !== "none") )  {
         			tr[i].style.display = "";
       			} else {
         			tr[i].style.display = "none";
