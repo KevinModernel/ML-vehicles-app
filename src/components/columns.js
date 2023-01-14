@@ -1,34 +1,50 @@
+import { ColumnFilter } from './ColumnFilter';
+
 export const COLUMNS = [
  	{
+ 		Header: 'Id',
+ 		accessor: "id",
+ 		Filter: ColumnFilter,
+ 		disableFilters: true
+ 	},
+ 	{
  		Header: 'Title',
- 		accesor: 'title'
+ 		accessor: "title",
+ 		Filter: ColumnFilter
  	},
  	{
  		Header: 'Kilometers',
- 		accesor: 'kilometers'
+ 		accessor: "kilometers",
+ 		Filter: ColumnFilter
  	},
  	{
  		Header: 'Price',
- 		accesor: 'price'
+ 		accessor: 'price',
+ 		Filter: ColumnFilter
  	},
  	{
  		Header: 'Year',
- 		accesor: 'year'
+ 		accessor: 'year',
+ 		Filter: ColumnFilter
  	},
  	{
  		Header: 'Engine',
- 		accesor: 'engine'
+ 		accessor: 'engine',
+ 		Filter: ColumnFilter
  	},
  	{
  		Header: 'Transmission',
- 		accesor: 'transmission'
+ 		accessor: 'transmission',
+ 		Filter: ColumnFilter
  	},
  	{
  		Header: 'Fuel',
- 		accesor: 'fuel'
+ 		accessor: 'fuel',
+ 		Filter: ColumnFilter
  	},
  	{
  		Header: 'Link',
- 		accesor: 'link'
- 	},
+ 		accessor: 'link',
+ 		Filter: ColumnFilter
+ 	}
 ]
