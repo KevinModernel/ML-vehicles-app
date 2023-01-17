@@ -1,5 +1,7 @@
 # MercadoLibre app - Buscador de vehículos
 
+(Under development - Implementing React Front-end)
+
 Aplicación para buscar vehículos publicados en Mercadolibre, filtrar datos obtenidos según interés (año, kilometraje, combustible, transmisión, etc) y poder analizar el precio de mercado de los vehículos de interés y obtener así una mejor oportunidad de negocio.
 
 Utilizando Node y Express se monta el servidor para utilizar la aplicación. Se realizó un sencillo FrontEnd mediante el Template Engine PUG y la biblioteca Bootstrap para ingresar los datos de busqueda a través del browser y luego mostrarlos. 
