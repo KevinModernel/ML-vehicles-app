@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { displayForm, getData } = require('../controllers/index-controllers.js');
+const { getData } = require('../controllers/index-controllers.js');
 
 // Routes /API/
 
