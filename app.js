@@ -1,20 +1,18 @@
 const express = require('express');
-const axios = require('axios');
 const bodyParser = require('body-parser');
 const indexRouter = require('./src/routes/index-router.js');
+const source = process.env.SOURCE;
 
 const app = express();
 
-app.use(express.static('./public'));
+// Front files
+app.use(express.static(source));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }))
 
-// View engine
-app.set('views', './public/views');
-app.set('view engine', 'pug');
-
 // app routers
-app.use('/', indexRouter);
+app.use('/API', indexRouter);
 
 // Innitialize Express Server
 const PORT = 3000
