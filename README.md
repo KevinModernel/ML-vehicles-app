@@ -14,6 +14,4 @@ Luego se despliega una tabla con los resultados, y opciones para filtrar y así 
 
 # Consideraciones
 
-Cantidad de resultados: API limitada a 50 resultados por request. En archivo "ML-API-Utils.js" se realiza el HTTP request a la API, y esta programada para traer 100 resultados (realiza 2 requests). En caso de precisar más resultados, agregar más requests.
-
-Offset resultados: Con los 2 requests se traen los primeros 100 resultados de la busqueda, los cuales están ordenados según "Más relevantes". Si se tiene interés de ir a resultados menos relevantes, se puede modificar el offset de http request en "ML-API-Utils.js", aumentando su valor.
+Cantidad de resultados: API limitada a 200 resultados por request.
